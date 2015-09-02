@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.way.Main_Action"
-    android:versionCode="1"
-    android:versionName="1.0" android:installLocation="preferExternal">
-    
+<manifest package="com.way.Main_Action"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:installLocation="preferExternal"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-sdk
         android:minSdkVersion="7"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="17"/>
 
     <application
         android:icon="@drawable/handair"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Light.NoTitleBar" >
-        <activity android:name="com.way.Main_Action.HandAirActivity" >
+        android:theme="@android:style/Theme.Light.NoTitleBar">
+        <activity android:name="com.way.Main_Action.HandAirActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name="com.way.Right_Action.CitySortActivity" ></activity>
-        <activity 
-            android:name="com.way.Right_Action.SkinActivity" ></activity>
-        <activity 
-            android:name="com.way.Right_Action.SettingsActivity" ></activity>
-        <activity 
-            android:name="com.way.Right_Action.MentionSettingsActivity" ></activity>"
+            android:name="com.way.Right_Action.CitySortActivity"></activity>
         <activity
-            android:name="com.way.Right_Action.AboutUsActivity" ></activity>
-        <activity 
-            android:name="com.way.Left_Action.CityChooseActivity" ></activity>"
-     </application>
+            android:name="com.way.Right_Action.SkinActivity"></activity>
+        <activity
+            android:name="com.way.Right_Action.SettingsActivity"></activity>
+        <activity
+            android:name="com.way.Right_Action.MentionSettingsActivity"></activity>"
+        <activity
+            android:name="com.way.Right_Action.AboutUsActivity"></activity>
+        <activity
+            android:name="com.way.Left_Action.CityChooseActivity"></activity>"
+    </application>
 
 </manifest>

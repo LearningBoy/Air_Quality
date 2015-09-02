@@ -19,11 +19,9 @@ import com.way.Main_Action.R;
 @SuppressLint("SimpleDateFormat")
 public class MentionSettingsActivity extends Activity{
 	
-	//��ȡʱ���ʽ������
 	//DateFormat fmtTime = DateFormat.getDateTimeInstance();
 	SimpleDateFormat fmtTime = new SimpleDateFormat("HH:mm");
 	TextView TimeLabel = null;
-	//��ȡһ���������
 	Calendar dateAndTime = Calendar.getInstance(Locale.CHINA);
 	
 	TimePickerDialog.OnTimeSetListener t = new TimePickerDialog.OnTimeSetListener(){

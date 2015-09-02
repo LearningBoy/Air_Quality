@@ -14,8 +14,9 @@ public class AboutUsActivity extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.about_us);
-		ImageView Goback = (ImageView) findViewById(R.id.about_us_imageView1);
-	    Goback.setOnClickListener(new OnClickListener() {
+
+		ImageView back = (ImageView) findViewById(R.id.about_us_imageView1);
+	    back.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -23,6 +24,5 @@ public class AboutUsActivity extends Activity{
 			}
 		});
 	}
-	
 	
 }

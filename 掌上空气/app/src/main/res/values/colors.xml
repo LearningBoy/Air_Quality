@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--ARGB:FF000000  RGB:000000 多出的两位表示透明度，0全透明，255不透明 -->
     <color name="bkcolor_1">#00FF00</color>
     <color name="bkcolor_2">#0000FF</color>
     <color name="bkcolor_3">#00FFFF</color>
@@ -10,8 +11,6 @@
     <color name="bkcolor_8">#CC0000</color>
     <color name="bkcolor_9">#FF00FF</color>
     <color name="color_hei">#ff000000</color>
-    <color name="color_hei_8">#00000000</color>
-    <color name="color_cihei">#ff333333</color>
     <color name="color_shenhui">#ff999999</color>
     <color name="color_zhonghui">#ff798089</color>
     <color name="color_qianhui">#ff888b8d</color>
@@ -22,13 +21,11 @@
     <color name="window_bg">#ffeef1f3</color>
     <color name="title_bg">#ff54acea</color>
     <color name="button_unselected">#ff54acea</color>
-    <color name="transparent">@color/color_hei_8</color>
     <color name="chat_background">@color/window_bg</color>
     <color name="chat_title_name">@color/color_bai</color>
     <color name="traffic_bg">#ffe3e6e8</color>
     <color name="traffic_txt">@color/color_hei</color>
     <color name="traffic_data">@color/color_zhonghui</color>
-    <color name="chat_text">@color/color_cihei</color>
     <color name="chat_time">@color/color_bai</color>
     <color name="screenshot_normal">#3f000000</color>
     <color name="screenshot_pressed">#bf000000</color>
@@ -63,10 +60,8 @@
     <color name="sc_chat_contact">#ffeeeeee</color>
     <color name="sc_black">#ff000000</color>
     <color name="sc_white">@color/color_bai_8</color>
-    <color name="sc_transparent">#00ffffff</color>
     <color name="sc_gray">#ff777777</color>
     <color name="sc_name">#ff5fc4ff</color>
-    <color name="sc_transparent_background">@color/color_hei_8</color>
     <color name="sc_info_btn_press">#f043afd4</color>
     <color name="text_drag_refresh_big">@color/color_shenhui</color>
     <color name="tag_textview1">#ff795028</color>
@@ -81,7 +76,6 @@
     <color name="feed_item_comment_press_background">#ffdddddd</color>
     <color name="qzone_black">#ff000000</color>
     <color name="qzone_white">#ffffffff</color>
-    <color name="qzone_transparent">#00ffffff</color>
     <color name="gray">#ff777777</color>
     <color name="red">#ffff0000</color>
     <color name="transparentpercent">#e5000000</color>
@@ -92,7 +86,6 @@
     <color name="qzone_myfeed_title">#ff404040</color>
     <color name="qzone_feed_content">#ff0e0e0e</color>
     <color name="translucent_background">#5c000000</color>
-    <color name="text_nick_name">#ff333333</color>
     <color name="text_comment">#ff6b6b6b</color>
     <color name="shorttextColor">#ff8d8d8d</color>
     <color name="qzone_shuoshuo_textcount_normal_color">#ff9a9999</color>
@@ -101,11 +94,9 @@
     <color name="comment_nick_name">#ff000000</color>
     <color name="feed_operation_text_color">#ff246183</color>
     <color name="feed_item_assist_text_color">#ff979797</color>
-    <color name="feed_item_content_text_color">#ff333333</color>
     <color name="feed_item_content_text_color_normal">#ff000000</color>
     <color name="feed_image_background_color">#fff2f2f2</color>
     <color name="feed_item_comment_background">#fff6f6f6</color>
-    <color name="myfeed_item_content_text_color">#ff333333</color>
     <color name="myfeed_item_comment_text_color">#ff999999</color>
     <color name="myfeed_item_more_comment_color">#ff067bb1</color>
     <color name="myfeed_comment_color">#ff4a4a4a</color>

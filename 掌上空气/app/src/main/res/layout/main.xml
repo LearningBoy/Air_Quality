@@ -1,48 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:layout_height="fill_parent">
 
-    <FrameLayout
+    <LinearLayout
+        android:id="@+id/homeLeft"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+        android:background="@xml/friend_list_bg_repeat"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/homeLeft"
+        <ListView
+            android:id="@+id/list_left"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@drawable/friend_list_bg_repeat"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:paddingTop="50dp">
+        </ListView>
+    </LinearLayout>
 
-            <ListView
-                android:id="@+id/list_left"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </ListView>
-        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/homeRight"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@xml/friend_list_bg_repeat"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/homeRight"
+        <ListView
+            android:id="@+id/list_right"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@drawable/friend_list_bg_repeat"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:paddingTop="50dp">
+        </ListView>
+    </LinearLayout>
 
-            <ListView
-                android:id="@+id/list_right"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </ListView>
-        </LinearLayout>
+    <com.way.Main_Slide.HomeCenterLayout
+        android:id="@+id/homeCenter"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-        <com.way.Main_Slide.HomeCenterLayout
-            android:id="@+id/homeCenter"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
+        <include layout="@layout/content"/>
+    </com.way.Main_Slide.HomeCenterLayout>
 
-            <include layout="@layout/content" />"
-        </com.way.Main_Slide.HomeCenterLayout>
-    </FrameLayout>
-
-</LinearLayout>
+</FrameLayout>

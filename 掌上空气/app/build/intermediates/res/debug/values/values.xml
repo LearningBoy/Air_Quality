@@ -17,18 +17,15 @@
     <color name="button_reply_pressed">#fffff8d0</color>
     <color name="button_unselected">#ff54acea</color>
     <color name="chat_background">@color/window_bg</color>
-    <color name="chat_text">@color/color_cihei</color>
     <color name="chat_time">@color/color_bai</color>
     <color name="chat_title_name">@color/color_bai</color>
     <color name="color_bai">#ffffffff</color>
     <color name="color_bai_8">#ffffffff</color>
-    <color name="color_cihei">#ff333333</color>
     <color name="color_divider">#ffc9c9c9</color>
     <color name="color_divider_for_contactlist_lower">#ffc2c8cd</color>
     <color name="color_divider_for_recentlist_upper">#ffadb4ba</color>
     <color name="color_divider_for_trooplist">#ffc9c9c9</color>
     <color name="color_hei">#ff000000</color>
-    <color name="color_hei_8">#00000000</color>
     <color name="color_lan">#ff067bb1</color>
     <color name="color_qianhui">#ff888b8d</color>
     <color name="color_shenhui">#ff999999</color>
@@ -45,7 +42,6 @@
     <color name="feed_item_commbutton_text">#ff525557</color>
     <color name="feed_item_comment_background">#fff6f6f6</color>
     <color name="feed_item_comment_press_background">#ffdddddd</color>
-    <color name="feed_item_content_text_color">#ff333333</color>
     <color name="feed_item_content_text_color_normal">#ff000000</color>
     <color name="feed_item_pressed">#ffeeeeee</color>
     <color name="feed_item_time_text">#ff979797</color>
@@ -61,7 +57,6 @@
     <color name="list_item_press">#fff2f4f5</color>
     <color name="myfeed_comment_color">#ff4a4a4a</color>
     <color name="myfeed_item_comment_text_color">#ff999999</color>
-    <color name="myfeed_item_content_text_color">#ff333333</color>
     <color name="myfeed_item_more_comment_color">#ff067bb1</color>
     <color name="myfeed_item_praise_text">#ff424242</color>
     <color name="no_auto_reply_normal">#ff636363</color>
@@ -79,7 +74,6 @@
     <color name="qzone_picviewer_loading_toload">#bf000000</color>
     <color name="qzone_shuoshuo_textcount_exceed_color">#ffd90115</color>
     <color name="qzone_shuoshuo_textcount_normal_color">#ff9a9999</color>
-    <color name="qzone_transparent">#00ffffff</color>
     <color name="qzone_white">#ffffffff</color>
     <color name="recent_msg">@color/color_zhonghui</color>
     <color name="red">#ffff0000</color>
@@ -89,8 +83,6 @@
     <color name="sc_info_btn_press">#f043afd4</color>
     <color name="sc_name">#ff5fc4ff</color>
     <color name="sc_red">#ffff0000</color>
-    <color name="sc_transparent">#00ffffff</color>
-    <color name="sc_transparent_background">@color/color_hei_8</color>
     <color name="sc_transparent_black">#7f000000</color>
     <color name="sc_white">@color/color_bai_8</color>
     <color name="screenshot_normal">#3f000000</color>
@@ -109,14 +101,12 @@
     <color name="tag_textview3">#ff284479</color>
     <color name="text_comment">#ff6b6b6b</color>
     <color name="text_drag_refresh_big">@color/color_shenhui</color>
-    <color name="text_nick_name">#ff333333</color>
     <color name="thirty_transparent_black">#4d000000</color>
     <color name="title_bg">#ff54acea</color>
     <color name="traffic_bg">#ffe3e6e8</color>
     <color name="traffic_data">@color/color_zhonghui</color>
     <color name="traffic_txt">@color/color_hei</color>
     <color name="translucent_background">#5c000000</color>
-    <color name="transparent">@color/color_hei_8</color>
     <color name="transparentpercent">#e5000000</color>
     <color name="twenty_transparent_black">#33000000</color>
     <color name="video_bg_color">#ffecf3f9</color>
@@ -125,274 +115,16 @@
     <!-- From: file:/E:/android_workplace/掌上空气/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">掌上空气</string>
-    <string name="hello">Hello World, QQmini2Activity!</string>
     <string name="press_again_exit">再按一次退出程序</string>
     <!-- From: file:/E:/android_workplace/掌上空气/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="A1_Font">
-        <item name="android:textSize">19.0sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:shadowColor">@color/semi_transparent</item>
-        <item name="android:shadowDy">-1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="A2_Font">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:shadowColor">@color/semi_transparent</item>
-        <item name="android:shadowDy">-1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="A3_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:shadowColor">@color/semi_transparent</item>
-        <item name="android:shadowDy">-1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="A4_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:shadowColor">@color/semi_transparent</item>
-        <item name="android:shadowDy">-1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="A5_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-    <style name="A6_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:shadowColor">@color/semi_transparent</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="A7_Font">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-    <style name="A8_Font">
-        <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">#ff0e0e0e</item>
-        <item name="android:shadowColor">#88ffffff</item>
-        <item name="android:shadowRadius">5.0</item>
-    </style>
-    <style name="B1_Font">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">#ff0e0e0e</item>
-    </style>
-    <style name="B2_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ff0e0e0e</item>
-    </style>
-    <style name="B3_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">#ff0e0e0e</item>
-    </style>
-    <style name="B4_Font">
-        <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">#ff0e0e0e</item>
-    </style>
-    <style name="B5_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">#ff0e0e0e</item>
-        <item name="android:shadowColor">@color/semi_transparent_w</item>
-        <item name="android:shadowDy">-1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="B6_Font">
-        <item name="android:textSize">13.0sp</item>
-        <item name="android:textColor">#ff0e0e0e</item>
-    </style>
-    <style name="B7_Font">
-        <item name="android:textSize">19.0sp</item>
-        <item name="android:textColor">#ff0e0e0e</item>
-    </style>
-    <style name="C1_Font">
-        <item name="android:textSize">10.0sp</item>
-        <item name="android:textColor">#ff929292</item>
-    </style>
-    <style name="C2_Font">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">#ff929292</item>
-        <item name="android:shadowColor">@color/semi_transparent_w</item>
-        <item name="android:shadowDy">-1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="C3_Font">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">#ff929292</item>
-    </style>
-    <style name="C4_Font">
-        <item name="android:textSize">13.0sp</item>
-        <item name="android:textColor">#ff929292</item>
-    </style>
-    <style name="C5_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">#ff929292</item>
-    </style>
-    <style name="C6_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ff929292</item>
-        <item name="android:shadowColor">@color/semi_transparent_w</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="C7_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ff929292</item>
-        <item name="android:shadowColor">@color/semi_transparent_w</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="D1_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">#ff727475</item>
-    </style>
-    <style name="D2_Font">
-        <item name="android:textSize">13.0sp</item>
-        <item name="android:textColor">#ff727475</item>
-    </style>
-    <style name="D3_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ff727475</item>
-    </style>
-    <style name="D4_Font">
-        <item name="android:textSize">13.0sp</item>
-        <item name="android:textColor">#ff727475</item>
-        <item name="android:shadowColor">@color/semi_transparent_w</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="D5_Font">
-        <item name="android:textSize">10.0sp</item>
-        <item name="android:textColor">#ff727475</item>
-        <item name="android:shadowColor">@color/semi_transparent_w</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="D8_Font">
-        <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">#ff727475</item>
-    </style>
-    <style name="E1_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">#ff454a52</item>
-    </style>
-    <style name="E2_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ff454a52</item>
-        <item name="android:shadowColor">@color/semi_transparent_w</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="F1_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">#ff4686b3</item>
-    </style>
-    <style name="G1_Font">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">#ffeeeeee</item>
-    </style>
-    <style name="H1_Font">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">#ffbdbdbd</item>
-    </style>
-    <style name="I1_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#3fffffff</item>
-    </style>
-    <style name="J1_Font">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">#ff707070</item>
-    </style>
-    <style name="K1_Font">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">#ff3b639f</item>
-    </style>
-    <style name="L1_Font">
-        <item name="android:textSize">10.0sp</item>
-        <item name="android:textColor">#ffb5b7bb</item>
-        <item name="android:shadowColor">@color/semi_transparent_w</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="M1_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ff1e5481</item>
-        <item name="android:shadowColor">#33ffffff</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="N1_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ff8c0303</item>
-        <item name="android:shadowColor">#7fffffff</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="O1_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ff1c1c1c</item>
-        <item name="android:shadowColor">#33ffffff</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="P1_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ffb2b2b2</item>
-    </style>
-    <style name="P2_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">#ffb2b2b2</item>
-    </style>
-    <style name="Q1_Font">
-        <item name="android:textSize">22.0sp</item>
-        <item name="android:textColor">#ff5786ae</item>
-    </style>
-    <style name="Q2_Font">
-        <item name="android:textSize">13.0sp</item>
-        <item name="android:textColor">#ff5786ae</item>
-    </style>
-    <style name="Q3_Font">
-        <item name="android:textSize">18.0sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ff5786ae</item>
-    </style>
-    <style name="Q4_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">#ff5786ae</item>
-    </style>
-    <style name="R1_Font">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ffb7b7b7</item>
-        <item name="android:shadowColor">@color/semi_transparent_w</item>
-        <item name="android:shadowDy">1.0</item>
-        <item name="android:shadowRadius">0.2</item>
-    </style>
-    <style name="S1_Font">
-        <item name="android:textSize">18.0sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ff608b41</item>
-    </style>
-    <style name="S2_Font">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">#ff608b41</item>
-    </style>
-    <style name="T1_Font">
-        <item name="android:textSize">10.0sp</item>
-        <item name="android:textColor">#ffffff00</item>
-    </style>
-    <style name="T1_Outline_Font" parent="@style/T1_Font">
-        <item name="android:textColor">#ffff6600</item>
-    </style>
-    <style name="T2_Font">
-        <item name="android:textSize">10.0sp</item>
-        <item name="android:textColor">#ffcccccc</item>
-    </style>
-    <style name="T2_Outline_Font" parent="@style/T2_Font">
-        <item name="android:textColor">#ff999999</item>
+        <item name="android:textSize">25.0sp</item>             <!--字体大小-->
+        <item name="android:textColor">#FFFFFFFF</item>         <!--字体颜色-->
+        <item name="android:textStyle">bold</item>              <!--字体字形bold(粗体,0)、italic(斜体，1)、bolditalic(又粗又斜，2)-->
+        <item name="android:shadowColor">#FFFFFF00</item>       <!--字体阴影颜色-->
+        <item name="android:shadowDx">1.0</item>                <!--阴影x偏移-->
+        <item name="android:shadowDy">1.0</item>                <!--阴影y偏移-->
+        <item name="android:shadowRadius">1.5</item>            <!--阴影范围-->
     </style>
 </resources>

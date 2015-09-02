@@ -81,7 +81,7 @@ public class HomeCenterLayout extends LinearLayout {
         //android.R.anim.accelerate_interpolator 加速进入
         this.mScroller = new Scroller(context, AnimationUtils.loadInterpolator(context, android.R.anim.decelerate_interpolator));
         final ViewConfiguration configuration = ViewConfiguration.get(context);
-        mTouchSlop = configuration.getScaledTouchSlop();
+        mTouchSlop = configuration.getScaledTouchSlop() / 4;
         mCurState = MIDDLE;
     }
 
@@ -146,7 +146,7 @@ public class HomeCenterLayout extends LinearLayout {
                 final float y = ev.getY(pointerIndex);
                 final int xDiff = (int) Math.abs(x - mLastMotionX);
                 final int yDiff = (int) Math.abs(y - mLastMotionY);
-                if (xDiff > mTouchSlop && yDiff < xDiff) {
+                if (xDiff > mTouchSlop &&yDiff < xDiff) {
                     mIsBeingDragged = true;
                 }
                 break;
@@ -200,12 +200,15 @@ public class HomeCenterLayout extends LinearLayout {
         return mIsBeingDragged;
     }
 
+    public void scroll(){
+        scrollToScreen();
+    }
     /************************************************************************************************************
      * 根据滑动事件进行滑动
      */
     private void scrollToScreen() {
         int scrollDistance;
-        if (Math.abs(getScrollX()) > getWidth() / 3)
+        if (Math.abs(getScrollX()) > getWidth() / 6)
             scrollDistance = (getScrollX() > 0) ? getWidth() - menuWidth - getScrollX() : -(getWidth() - menuWidth - Math.abs(getScrollX()));
         else
             scrollDistance = -getScrollX();
@@ -250,7 +253,7 @@ public class HomeCenterLayout extends LinearLayout {
         }
         setBrotherVisibility(which_page);
         moveDistance = targetX - getScrollX();
-        mScroller.startScroll(getScrollX(), 0, moveDistance, 0, Math.abs(moveDistance) * 2);
+        mScroller.startScroll(getScrollX(), 0, moveDistance, 0, Math.abs(moveDistance) / 2);
         invalidate();
     }
 
