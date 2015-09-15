@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -25,6 +27,11 @@ import android.widget.Toast;
 import com.way.HTTP.HttpUtils;
 import com.way.HTTP.URL;
 import com.way.Main_Slide.HomeCenterLayout;
+import com.way.Right_Action.AboutUsActivity;
+import com.way.Right_Action.CitySortActivity;
+import com.way.Right_Action.MentionSettingsActivity;
+import com.way.Right_Action.SettingsActivity;
+import com.way.Right_Action.SkinActivity;
 
 public class HandAirActivity extends Activity implements OnClickListener {
 
@@ -60,6 +67,9 @@ public class HandAirActivity extends Activity implements OnClickListener {
 
     //截图结束时间
     private long exitTime;
+
+    //页面切换控件
+    private Intent intent;
 
     /************************************************************************************************************
      */
@@ -107,6 +117,7 @@ public class HandAirActivity extends Activity implements OnClickListener {
         }
         SimpleAdapter adapter = new SimpleAdapter(this, list_item_right, R.layout.item_right, new String[]{"name"}, new int[]{R.id.item_right_text});
         list_right.setAdapter(adapter);
+        list_right.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
     }
 
@@ -116,6 +127,35 @@ public class HandAirActivity extends Activity implements OnClickListener {
     public void setListener() {
         leftBtn.setOnClickListener(this);
         rightBtn.setOnClickListener(this);
+        list_right.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        new ScreenShoot().execute(HandAirActivity.this);
+                        break;
+                    case 1:
+                        intent = new Intent(HandAirActivity.this, CitySortActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(HandAirActivity.this, SkinActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(HandAirActivity.this, SettingsActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(HandAirActivity.this, MentionSettingsActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(HandAirActivity.this, AboutUsActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+            }
+        });
     }
 
     /************************************************************************************************************
@@ -140,45 +180,50 @@ public class HandAirActivity extends Activity implements OnClickListener {
     }
 
     /************************************************************************************************************
-     * 获取主界面截图
+     * 使用异步任务完成屏幕截图
      */
-    private void Shoot_Image() {
-        View draw_view = this.getWindow().getDecorView();
-        draw_view.setDrawingCacheEnabled(true);
-        Bitmap bitmap = draw_view.getDrawingCache();
-        String SavePath = getSDCardPath() + "/ScreenImage";
-        try {
-            File path = new File(SavePath);
-            String filepath = SavePath + "/Screen_1.png";
-            File file = new File(filepath);
-            if (!path.exists()) {
-                path.mkdirs();
+    public class ScreenShoot extends AsyncTask<Activity, Void, Boolean> {
+
+        @Override
+        protected void onPreExecute() {
+            centerLayout.setPage(HomeCenterLayout.MIDDLE);
+        }
+
+        @Override
+        protected Boolean doInBackground(Activity... activities) {
+            Boolean b = false;
+            View draw_view = activities[0].getWindow().getDecorView();
+            draw_view.setDrawingCacheEnabled(true);
+            Bitmap bitmap = draw_view.getDrawingCache();
+            String SavePath = Environment.getExternalStorageDirectory() + "/ScreenImage";
+            try {
+                String filepath = SavePath + "/Screen_1.png";
+                File file = new File(filepath);
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
+                FileOutputStream fos;
+                fos = new FileOutputStream(file);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+                fos.flush();
+                fos.close();
+                b = true;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            if (!file.exists()) {
-                file.createNewFile();
+            return b;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            if (aBoolean){
+                Toast.makeText(HandAirActivity.this, "截图成功", Toast.LENGTH_LONG).show();
+            }else {
+                Toast.makeText(HandAirActivity.this, "截图失败", Toast.LENGTH_LONG).show();
             }
-            FileOutputStream fos;
-            fos = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-            fos.flush();
-            fos.close();
-            Toast.makeText(this, "截图成功", Toast.LENGTH_LONG).show();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
-    /************************************************************************************************************
-     * 获得本地SD卡路径
-     */
-    private String getSDCardPath() {
-        File sdcardDir = null;
-        boolean sdcardExist = Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
-        if (sdcardExist) {
-            sdcardDir = Environment.getExternalStorageDirectory();
-        }
-        return sdcardDir.toString();
-    }
 
     /************************************************************************************************************
      * 双击返回键退出主页面
