@@ -63,6 +63,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:gravity="center"
                 android:textColor="@color/color_bai_8"
                 android:textSize="40sp"/>
 
@@ -170,4 +171,4 @@
 
     </LinearLayout>
 
-</ScrollView><!-- From: file:/E:/android_workplace/掌上空气/app/src/main/res/layout/content.xml -->
+</ScrollView><!-- From: file:/E:/GitHub/Code_From_Today/掌上空气/app/src/main/res/layout/content.xml -->

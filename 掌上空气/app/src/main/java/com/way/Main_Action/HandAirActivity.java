@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
@@ -122,7 +123,7 @@ public class HandAirActivity extends Activity implements OnClickListener {
     }
 
     /************************************************************************************************************
-     * 按钮触发
+     * 按钮触发监听
      */
     public void setListener() {
         leftBtn.setOnClickListener(this);
@@ -159,7 +160,7 @@ public class HandAirActivity extends Activity implements OnClickListener {
     }
 
     /************************************************************************************************************
-     * 按钮触发
+     * 主界面按钮触发事件
      */
     public void onClick(View v) {
         switch (v.getId()) {
@@ -197,17 +198,23 @@ public class HandAirActivity extends Activity implements OnClickListener {
             Bitmap bitmap = draw_view.getDrawingCache();
             String SavePath = Environment.getExternalStorageDirectory() + "/ScreenImage";
             try {
-                String filepath = SavePath + "/Screen_1.png";
-                File file = new File(filepath);
-                if (!file.exists()) {
-                    file.createNewFile();
+                String fileend = ".png";
+                for (int i = 1; ; i++) {
+                    String filepath = SavePath + i + fileend;
+                    File file = new File(filepath);
+                    if (file.exists()) {
+                        continue;
+                    } else {
+                        file.createNewFile();
+                        FileOutputStream fos;
+                        fos = new FileOutputStream(file);
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+                        fos.flush();
+                        fos.close();
+                        b = true;
+                        break;
+                    }
                 }
-                FileOutputStream fos;
-                fos = new FileOutputStream(file);
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-                fos.flush();
-                fos.close();
-                b = true;
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -216,9 +223,9 @@ public class HandAirActivity extends Activity implements OnClickListener {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            if (aBoolean){
+            if (aBoolean) {
                 Toast.makeText(HandAirActivity.this, "截图成功", Toast.LENGTH_LONG).show();
-            }else {
+            } else {
                 Toast.makeText(HandAirActivity.this, "截图失败", Toast.LENGTH_LONG).show();
             }
         }
@@ -251,21 +258,32 @@ public class HandAirActivity extends Activity implements OnClickListener {
      */
     public class MyTask extends AsyncTask<String, Void, List<HashMap<String, Object>>> {
 
+        private ProgressDialog dialog;
+
+        @Override
+        protected void onPreExecute() {
+            dialog = new ProgressDialog(HandAirActivity.this);
+            dialog.setMessage("正在获取当前信息，请稍后....");
+            dialog.show();
+        }
+
         @Override
         protected List<HashMap<String, Object>> doInBackground(String... strings) {
             List<HashMap<String, Object>> list;
-            list = HttpUtils.get_city_all_PM_2_5(strings[0]);
+            list = HttpUtils.get_data(strings[0]);
             return list;
         }
 
         @Override
         protected void onPostExecute(List<HashMap<String, Object>> hashMaps) {
-            text_city.setText(hashMaps.get(0).get("area").toString());
-            text_center.setText(hashMaps.get(0).get("quality").toString());
-            text_PM_2_5.setText(hashMaps.get(0).get("pm2_5").toString());
-            text_AQI.setText(hashMaps.get(0).get("aqi").toString());
-            text_primary_pollution.setText(hashMaps.get(0).get("primary_pollutant").toString());
-            super.onPostExecute(hashMaps);
+            dialog.dismiss();
+            if (hashMaps != null) {
+                text_city.setText(hashMaps.get(0).get("area").toString());
+                text_center.setText(hashMaps.get(0).get("quality").toString());
+                text_PM_2_5.setText(hashMaps.get(0).get("pm2_5").toString());
+                text_AQI.setText(hashMaps.get(0).get("aqi").toString());
+                text_primary_pollution.setText(hashMaps.get(0).get("primary_pollutant").toString());
+            }
         }
     }
 }

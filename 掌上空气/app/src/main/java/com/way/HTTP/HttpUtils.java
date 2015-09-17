@@ -20,9 +20,9 @@ import java.util.List;
  */
 public class HttpUtils {
 
-    //获取一个城市所有监测点的PM2.5数据
-    public static List<HashMap<String,Object>> get_city_all_PM_2_5(String path) {
-        List<HashMap<String,Object>> list = new ArrayList<HashMap<String, Object>>();
+    //从服务端获取数据
+    public static List<HashMap<String, Object>> get_data(String path) {
+        List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
         HttpClient httpClient = new DefaultHttpClient();
         HttpGet httpGet = new HttpGet(path);
         try {
@@ -31,17 +31,17 @@ public class HttpUtils {
                 String json_string = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
                 JSONArray jsonArray = new JSONArray(json_string);
                 for (int i = 0; i < 2; i++) {
-                    HashMap<String,Object> map = new HashMap<String, Object>();
+                    HashMap<String, Object> map = new HashMap<String, Object>();
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     //选择迭代器，输出数据
                     Iterator<String> iterator = jsonObject.keys();
-                    while (iterator.hasNext()){
+                    while (iterator.hasNext()) {
                         String json_key = iterator.next();
                         Object json_value = jsonObject.get(json_key);
-                        if (json_key==null){
+                        if (json_key == null) {
                             json_value = "";
                         }
-                        map.put(json_key,json_value);
+                        map.put(json_key, json_value);
                     }
                     list.add(map);
                 }
@@ -53,4 +53,5 @@ public class HttpUtils {
         }
         return list;
     }
+
 }

@@ -4,4 +4,9 @@
     <string name="app_name">掌上空气</string>
     <string name="press_again_exit">再按一次退出程序</string>
 
+    <string name="city">城市</string>
+    <string name="sort">排名</string>
+    <string name="AQI">空气质量指数</string>
+    <string name="level">级别</string>
+
 </resources>

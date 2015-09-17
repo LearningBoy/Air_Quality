@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/android_workplace/掌上空气/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/E:/GitHub/Code_From_Today/掌上空气/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="add_troop_member_bg">#ffdadfe2</color>
     <color name="bkcolor_1">#00FF00</color>
@@ -112,11 +112,15 @@
     <color name="video_bg_color">#ffecf3f9</color>
     <color name="white">#ffffffff</color>
     <color name="window_bg">#ffeef1f3</color>
-    <!-- From: file:/E:/android_workplace/掌上空气/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/E:/GitHub/Code_From_Today/掌上空气/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="AQI">空气质量指数</string>
     <string name="app_name">掌上空气</string>
+    <string name="city">城市</string>
+    <string name="level">级别</string>
     <string name="press_again_exit">再按一次退出程序</string>
-    <!-- From: file:/E:/android_workplace/掌上空气/app/src/main/res/values/styles.xml -->
+    <string name="sort">排名</string>
+    <!-- From: file:/E:/GitHub/Code_From_Today/掌上空气/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="A1_Font">
         <item name="android:textSize">25.0sp</item>             <!--字体大小-->

@@ -125,54 +125,55 @@ public final class R {
     public static final class drawable {
         public static final int common_title_bg=0x7f020000;
         public static final int friend_list_bg=0x7f020001;
-        public static final int handair=0x7f020002;
-        public static final int location=0x7f020003;
-        public static final int recent_chat_showright_normal=0x7f020004;
-        public static final int recent_chat_showright_pressed=0x7f020005;
+        public static final int friend_list_bg_repeat=0x7f020002;
+        public static final int handair=0x7f020003;
+        public static final int location=0x7f020004;
+        public static final int recent_chat_showright_normal=0x7f020005;
+        public static final int recent_chat_showright_pressed=0x7f020006;
+        public static final int showright_selector=0x7f020007;
     }
     public static final class id {
         public static final int about_us_imageView1=0x7f080000;
-        public static final int checkbox_1=0x7f08001f;
+        public static final int checkbox_1=0x7f08001e;
         public static final int choose_item_textview_1=0x7f080003;
         public static final int city_choose_list=0x7f080002;
-        public static final int city_cort_textview=0x7f080005;
         public static final int city_sort_imageView1=0x7f080004;
-        public static final int city_sort_list=0x7f080006;
+        public static final int city_sort_list=0x7f080005;
         public static final int editText1=0x7f080001;
-        public static final int get_time=0x7f08001d;
-        public static final int homeCenter=0x7f08001a;
-        public static final int homeLeft=0x7f080016;
-        public static final int homeRight=0x7f080018;
-        public static final int item_right_text=0x7f080015;
-        public static final int item_textview_1=0x7f080007;
-        public static final int item_textview_2=0x7f080008;
-        public static final int item_textview_3=0x7f080009;
-        public static final int ivTitleBtnRigh=0x7f08000c;
-        public static final int ivTitltBtnLeft=0x7f08000a;
-        public static final int left_text_first=0x7f080013;
-        public static final int left_text_second=0x7f080014;
-        public static final int list_left=0x7f080017;
-        public static final int list_right=0x7f080019;
-        public static final int main_text_AQI=0x7f08000f;
-        public static final int main_text_PM_2_5=0x7f080012;
-        public static final int main_text_center=0x7f08000d;
-        public static final int main_text_city=0x7f08000b;
-        public static final int main_text_primary_pollution=0x7f080010;
-        public static final int main_view_1=0x7f08000e;
-        public static final int main_view_2=0x7f080011;
-        public static final int mention_settings_imageView1=0x7f08001b;
-        public static final int mention_time=0x7f08001c;
-        public static final int settings_imageView1=0x7f08001e;
-        public static final int skin_imageView1=0x7f080020;
-        public static final int skin_textview_1=0x7f080021;
-        public static final int skin_textview_2=0x7f080023;
-        public static final int skin_textview_3=0x7f080025;
-        public static final int skin_textview_4=0x7f080022;
-        public static final int skin_textview_5=0x7f080024;
-        public static final int skin_textview_6=0x7f080026;
-        public static final int skin_textview_7=0x7f080027;
-        public static final int skin_textview_8=0x7f080028;
-        public static final int skin_textview_9=0x7f080029;
+        public static final int get_time=0x7f08001c;
+        public static final int homeCenter=0x7f080019;
+        public static final int homeLeft=0x7f080015;
+        public static final int homeRight=0x7f080017;
+        public static final int item_right_text=0x7f080014;
+        public static final int item_text_view_1=0x7f080006;
+        public static final int item_text_view_2=0x7f080007;
+        public static final int item_text_view_3=0x7f080008;
+        public static final int ivTitleBtnRigh=0x7f08000b;
+        public static final int ivTitltBtnLeft=0x7f080009;
+        public static final int left_text_first=0x7f080012;
+        public static final int left_text_second=0x7f080013;
+        public static final int list_left=0x7f080016;
+        public static final int list_right=0x7f080018;
+        public static final int main_text_AQI=0x7f08000e;
+        public static final int main_text_PM_2_5=0x7f080011;
+        public static final int main_text_center=0x7f08000c;
+        public static final int main_text_city=0x7f08000a;
+        public static final int main_text_primary_pollution=0x7f08000f;
+        public static final int main_view_1=0x7f08000d;
+        public static final int main_view_2=0x7f080010;
+        public static final int mention_settings_imageView1=0x7f08001a;
+        public static final int mention_time=0x7f08001b;
+        public static final int settings_imageView1=0x7f08001d;
+        public static final int skin_imageView1=0x7f08001f;
+        public static final int skin_textview_1=0x7f080020;
+        public static final int skin_textview_2=0x7f080022;
+        public static final int skin_textview_3=0x7f080024;
+        public static final int skin_textview_4=0x7f080021;
+        public static final int skin_textview_5=0x7f080023;
+        public static final int skin_textview_6=0x7f080025;
+        public static final int skin_textview_7=0x7f080026;
+        public static final int skin_textview_8=0x7f080027;
+        public static final int skin_textview_9=0x7f080028;
     }
     public static final class layout {
         public static final int about_us=0x7f030000;
@@ -183,14 +184,19 @@ public final class R {
         public static final int content=0x7f030005;
         public static final int item_left=0x7f030006;
         public static final int item_right=0x7f030007;
-        public static final int main=0x7f030008;
-        public static final int mention_settings=0x7f030009;
-        public static final int settings=0x7f03000a;
-        public static final int skin=0x7f03000b;
+        public static final int left_item=0x7f030008;
+        public static final int main=0x7f030009;
+        public static final int mention_settings=0x7f03000a;
+        public static final int settings=0x7f03000b;
+        public static final int skin=0x7f03000c;
     }
     public static final class string {
-        public static final int app_name=0x7f060000;
-        public static final int press_again_exit=0x7f060001;
+        public static final int AQI=0x7f060000;
+        public static final int app_name=0x7f060001;
+        public static final int city=0x7f060002;
+        public static final int level=0x7f060003;
+        public static final int press_again_exit=0x7f060004;
+        public static final int sort=0x7f060005;
     }
     public static final class style {
         /** 阴影范围
