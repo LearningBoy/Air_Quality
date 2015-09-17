@@ -36,7 +36,8 @@ public class CitySortActivity extends Activity {
             }
         });
 
-        new MyTask().execute(URL.RANKING_AQI_URL);
+        String path = URL.RANKING_AQI_URL + "?city=beijing&token=" + URL.KEY;
+        new MyTask().execute(path);
     }
 
     /**************************************************************************************************

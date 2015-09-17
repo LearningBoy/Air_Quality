@@ -64,7 +64,7 @@ public class HandAirActivity extends Activity implements OnClickListener {
     private LinearLayout leftBtn;
 
     //右侧边栏选项
-    private String[] right_str = {"界面截图", "城市排行", "皮肤设置", "通用排行", "提醒设置", "关于我们", "版本号：V.01"};
+    private String[] right_str = {"界面截图", "城市排行", "通用设置", "提醒设置", "皮肤设置", "关于我们"};
 
     //截图结束时间
     private long exitTime;
@@ -132,22 +132,23 @@ public class HandAirActivity extends Activity implements OnClickListener {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        new ScreenShoot().execute(HandAirActivity.this);
+                        centerLayout.setPage(HomeCenterLayout.MIDDLE);
+                        shoot();
                         break;
                     case 1:
                         intent = new Intent(HandAirActivity.this, CitySortActivity.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(HandAirActivity.this, SkinActivity.class);
-                        startActivity(intent);
-                        break;
-                    case 3:
                         intent = new Intent(HandAirActivity.this, SettingsActivity.class);
                         startActivity(intent);
                         break;
-                    case 4:
+                    case 3:
                         intent = new Intent(HandAirActivity.this, MentionSettingsActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(HandAirActivity.this, SkinActivity.class);
                         startActivity(intent);
                         break;
                     case 5:
@@ -181,56 +182,51 @@ public class HandAirActivity extends Activity implements OnClickListener {
     }
 
     /************************************************************************************************************
-     * 使用异步任务完成屏幕截图
+     * 截图功能
      */
-    public class ScreenShoot extends AsyncTask<Activity, Void, Boolean> {
-
-        @Override
-        protected void onPreExecute() {
-            centerLayout.setPage(HomeCenterLayout.MIDDLE);
-        }
-
-        @Override
-        protected Boolean doInBackground(Activity... activities) {
-            Boolean b = false;
-            View draw_view = activities[0].getWindow().getDecorView();
-            draw_view.setDrawingCacheEnabled(true);
-            Bitmap bitmap = draw_view.getDrawingCache();
-            String SavePath = Environment.getExternalStorageDirectory() + "/ScreenImage";
-            try {
-                String fileend = ".png";
-                for (int i = 1; ; i++) {
-                    String filepath = SavePath + i + fileend;
-                    File file = new File(filepath);
-                    if (file.exists()) {
-                        continue;
-                    } else {
-                        file.createNewFile();
-                        FileOutputStream fos;
-                        fos = new FileOutputStream(file);
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-                        fos.flush();
-                        fos.close();
-                        b = true;
-                        break;
-                    }
+    public void shoot() {
+        //添加一个线程，等待300ms，等待主界面返回中间
+        new Thread(){
+            @Override
+            public void run() {
+                try {
+                    sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            return b;
+        }.run();
+        //获取屏幕
+        View draw_view = this.getWindow().getDecorView();
+        draw_view.setDrawingCacheEnabled(true);
+        Bitmap bitmap = draw_view.getDrawingCache();
+        //创建文件保存路径
+        String file_path;
+        File Image_file;
+        String extent = Environment.getExternalStorageDirectory().toString() + "/ScreenImage";
+        File file = new File(extent);
+        File[] files = file.listFiles();
+        if (files == null) {
+            file_path = extent + File.separator + 1 + ".png";
+        } else {
+            file_path = extent + File.separator + files.length + ".png";
+        }
+        Image_file = new File(file_path);
+        try {
+            if (!Image_file.exists()) {
+                Image_file.createNewFile();
+            }
+            FileOutputStream fos;
+            fos = new FileOutputStream(file_path);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            fos.flush();
+            fos.close();
+            Toast.makeText(this, "截图成功，请在ScreenImage目录下查看", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        @Override
-        protected void onPostExecute(Boolean aBoolean) {
-            if (aBoolean) {
-                Toast.makeText(HandAirActivity.this, "截图成功", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(HandAirActivity.this, "截图失败", Toast.LENGTH_LONG).show();
-            }
-        }
     }
-
 
     /************************************************************************************************************
      * 双击返回键退出主页面
@@ -263,7 +259,7 @@ public class HandAirActivity extends Activity implements OnClickListener {
         @Override
         protected void onPreExecute() {
             dialog = new ProgressDialog(HandAirActivity.this);
-            dialog.setMessage("正在获取当前信息，请稍后....");
+            dialog.setMessage("加载中....");
             dialog.show();
         }
 

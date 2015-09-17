@@ -39,8 +39,8 @@ public class MentionSettingsActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mention_settings);
 		
-		ImageView Goback = (ImageView) findViewById(R.id.mention_settings_imageView1);
-	    Goback.setOnClickListener(new OnClickListener() {
+		ImageView Go_back = (ImageView) findViewById(R.id.mention_settings_imageView1);
+	    Go_back.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
