@@ -16,7 +16,7 @@
             android:id="@+id/list_left"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:paddingTop="50dp">
+            android:paddingTop="70dp">
         </ListView>
     </LinearLayout>
 
@@ -31,7 +31,7 @@
             android:id="@+id/list_right"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:paddingTop="50dp">
+            android:paddingTop="70dp">
         </ListView>
     </LinearLayout>
 

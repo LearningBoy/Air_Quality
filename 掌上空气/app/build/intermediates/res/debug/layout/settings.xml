@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@xml/friend_list_bg_repeat"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@xml/friend_list_bg_repeat"
+              android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/color_lan" >
+        android:background="@color/color_lan">
 
         <ImageView
             android:id="@+id/settings_imageView1"
@@ -16,15 +16,16 @@
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:src="@android:drawable/ic_menu_revert" />
+            android:layout_marginStart="10dp"
+            android:src="@android:drawable/ic_menu_revert"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="通用设置"
+            android:text="@string/settings"
             android:textColor="@color/color_bai_8"
-            android:textSize="25sp" />
+            android:textSize="25sp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -33,17 +34,20 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="20dp"
-        android:background="@color/color_bai" >
+        android:background="@color/color_bai">
 
         <TextView
+            android:id="@+id/settings_data_update"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:gravity="center"
-            android:text="数据更新"
-            android:textColor="@color/color_zhonghui"
-            android:textSize="20sp" />
+            android:text="@string/data_fresh"
+            android:textColor="@color/color_zonghui"
+            android:textSize="20sp"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -53,105 +57,67 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="20dp"
         android:background="@color/color_bai"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="50dp" >
+            android:layout_height="50dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:gravity="center"
-                android:text="通知栏显示"
-                android:textColor="@color/color_zhonghui"
-                android:textSize="20sp" />
+                android:text="@string/show_in_bar"
+                android:textColor="@color/color_zonghui"
+                android:textSize="20sp"/>
 
             <CheckBox
-                android:id="@+id/checkbox_1"
+                android:id="@+id/settings_show_in_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="15dp" />
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"/>
         </RelativeLayout>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="2dp"
-            android:background="@color/color_shenhui" />
+            android:background="@color/color_shenhui"/>
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="50dp" >
+            android:layout_height="50dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:gravity="center"
-                android:text="桌面快捷图标"
-                android:textColor="@color/color_zhonghui"
-                android:textSize="20sp" />
+                android:text="@string/quick_desk_menu"
+                android:textColor="@color/color_zonghui"
+                android:textSize="20sp"/>
 
             <CheckBox
+                android:id="@+id/settings_desk_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="15dp" />
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"/>
         </RelativeLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:background="@color/color_shenhui" />
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="50dp" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:gravity="center"
-                android:text="桌面快捷图标"
-                android:textColor="@color/color_zhonghui"
-                android:textSize="20sp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="15dp" />
-        </RelativeLayout>
-
     </LinearLayout>
-    
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/color_bai" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:gravity="center"
-            android:text="数据更新"
-            android:textColor="@color/color_zhonghui"
-            android:textSize="20sp" />
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -160,47 +126,50 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="20dp"
         android:background="@color/color_bai"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/settings_check_update"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:gravity="center"
-            android:text="检查更新"
-            android:textColor="@color/color_zhonghui"
-            android:textSize="20sp" />
+            android:text="@string/search_update"
+            android:textColor="@color/color_zonghui"
+            android:textSize="20sp"/>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="2dp"
-            android:background="@color/color_shenhui" />
+            android:background="@color/color_shenhui"/>
 
         <TextView
+            android:id="@+id/settings_advice_submit"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:gravity="center"
-            android:text="意见反馈"
-            android:textColor="@color/color_zhonghui"
-            android:textSize="20sp" />
+            android:text="@string/advice_submit"
+            android:textColor="@color/color_zonghui"
+            android:textSize="20sp"/>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="2dp"
-            android:background="@color/color_shenhui" />
+            android:background="@color/color_shenhui"/>
 
         <TextView
+            android:id="@+id/settings_using_help"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:gravity="center"
-            android:text="使用教程"
-            android:textColor="@color/color_zhonghui"
-            android:textSize="20sp" />
+            android:text="@string/using_help"
+            android:textColor="@color/color_zonghui"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 </LinearLayout><!-- From: file:/E:/GitHub/Code_From_Today/掌上空气/app/src/main/res/layout/settings.xml -->

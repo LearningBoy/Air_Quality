@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -39,9 +40,6 @@ public class HandAirActivity extends Activity implements OnClickListener {
     //主页面
     private HomeCenterLayout centerLayout;
 
-    //当前城市
-    private TextView text_city;
-
     //空气状态，优、良、轻度污染、中度污染、重度污染、严重污染
     private TextView text_center;
 
@@ -61,7 +59,7 @@ public class HandAirActivity extends Activity implements OnClickListener {
     private ImageButton rightBtn;
 
     //显示左边栏按钮
-    private LinearLayout leftBtn;
+    private TextView leftBtn;
 
     //右侧边栏选项
     private String[] right_str = {"界面截图", "城市排行", "通用设置", "提醒设置", "皮肤设置", "关于我们"};
@@ -96,10 +94,9 @@ public class HandAirActivity extends Activity implements OnClickListener {
         rightLayout.setVisibility(View.GONE);
         centerLayout.setBrotherLayout(leftLayout, rightLayout);
 
-        leftBtn = (LinearLayout) findViewById(R.id.ivTitltBtnLeft);
+        leftBtn = (TextView) findViewById(R.id.ivTitltBtnLeft);
         rightBtn = (ImageButton) findViewById(R.id.ivTitleBtnRigh);
 
-        text_city = (TextView) findViewById(R.id.main_text_city);
         text_center = (TextView) findViewById(R.id.main_text_center);
         text_PM_2_5 = (TextView) findViewById(R.id.main_text_PM_2_5);
         text_AQI = (TextView) findViewById(R.id.main_text_AQI);
@@ -186,7 +183,7 @@ public class HandAirActivity extends Activity implements OnClickListener {
      */
     public void shoot() {
         //添加一个线程，等待300ms，等待主界面返回中间
-        new Thread(){
+        new Thread() {
             @Override
             public void run() {
                 try {
@@ -273,12 +270,14 @@ public class HandAirActivity extends Activity implements OnClickListener {
         @Override
         protected void onPostExecute(List<HashMap<String, Object>> hashMaps) {
             dialog.dismiss();
-            if (hashMaps != null) {
-                text_city.setText(hashMaps.get(0).get("area").toString());
+            if (hashMaps.size() != 0) {
+                leftBtn.setText(hashMaps.get(0).get("area").toString());
                 text_center.setText(hashMaps.get(0).get("quality").toString());
                 text_PM_2_5.setText(hashMaps.get(0).get("pm2_5").toString());
                 text_AQI.setText(hashMaps.get(0).get("aqi").toString());
                 text_primary_pollution.setText(hashMaps.get(0).get("primary_pollutant").toString());
+            }else{
+                Toast.makeText(HandAirActivity.this,"暂无数据",Toast.LENGTH_LONG).show();
             }
         }
     }

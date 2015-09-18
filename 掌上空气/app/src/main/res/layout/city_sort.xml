@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@xml/friend_list_bg_repeat"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@xml/friend_list_bg_repeat"
+              android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/color_lan" >
+        android:background="@color/color_lan">
 
         <ImageView
             android:id="@+id/city_sort_imageView1"
@@ -16,22 +16,24 @@
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:src="@android:drawable/ic_menu_revert" />
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/back"
+            android:src="@android:drawable/ic_menu_revert"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="城市空气质量排行榜"
+            android:text="@string/city_sort"
             android:textColor="@color/color_bai_8"
-            android:textSize="25sp" />
+            android:textSize="25sp"/>
     </RelativeLayout>
 
-    <ListView 
+    <ListView
         android:id="@+id/city_sort_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp" >
+        android:layout_marginTop="20dp">
     </ListView>
 
 </LinearLayout>

@@ -19,7 +19,6 @@ import com.way.Main_Action.R;
 @SuppressLint("SimpleDateFormat")
 public class MentionSettingsActivity extends Activity{
 	
-	//DateFormat fmtTime = DateFormat.getDateTimeInstance();
 	SimpleDateFormat fmtTime = new SimpleDateFormat("HH:mm");
 	TextView TimeLabel = null;
 	Calendar dateAndTime = Calendar.getInstance(Locale.CHINA);
@@ -27,7 +26,6 @@ public class MentionSettingsActivity extends Activity{
 	TimePickerDialog.OnTimeSetListener t = new TimePickerDialog.OnTimeSetListener(){
 		
 		public void onTimeSet(TimePicker view, int hour, int minute) {
-			// TODO Auto-generated method stub
 			dateAndTime.set(Calendar.HOUR,hour);
 			dateAndTime.set(Calendar.MINUTE,minute);
 			updateLabel();
@@ -43,7 +41,6 @@ public class MentionSettingsActivity extends Activity{
 	    Go_back.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				MentionSettingsActivity.this.finish();
 			}
 		});
@@ -52,7 +49,6 @@ public class MentionSettingsActivity extends Activity{
 	    mentiontime.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				new TimePickerDialog(MentionSettingsActivity.this,t,
 						dateAndTime.get(Calendar.HOUR),
 						dateAndTime.get(Calendar.MINUTE),true).show();

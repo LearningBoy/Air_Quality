@@ -17,29 +17,16 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp">
 
-            <LinearLayout
+            <TextView
                 android:id="@+id/ivTitltBtnLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_marginTop="5dp"
-                android:clickable="true"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/location"/>
-
-                <TextView
-                    android:id="@+id/main_text_city"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:textColor="@color/color_bai_8"
-                    android:textSize="20sp"/>
-            </LinearLayout>
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                android:textColor="@color/color_bai_8"
+                android:textSize="20sp"/>
 
             <ImageButton
                 android:id="@+id/ivTitleBtnRigh"

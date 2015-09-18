@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -63,7 +64,8 @@ public class CitySortActivity extends Activity {
         @Override
         protected void onPostExecute(List<HashMap<String, Object>> hashMaps) {
             dialog.dismiss();
-            if (hashMaps != null){
+            Log.i("ERROR","长度:" + hashMaps.size());
+            if (hashMaps.size() != 0){
                 SimpleAdapter mSimpleAdapter = new SimpleAdapter(CitySortActivity.this, hashMaps,
                         R.layout.city_sort_item,
                         new String[]{"area", "aqi", "level"},
