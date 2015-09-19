@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--主界面-->
     <string name="app_name">掌上空气</string>
     <string name="press_again_exit">再按一次退出程序</string>
     <string name="back">返回</string>
+    <string name="add_city">添加城市</string>
 
     <!-- 城市排名-->
     <string name="city_sort">城市空气质量排行榜</string>

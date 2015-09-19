@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
-        android:gravity="center"/>
+        android:gravity="center_vertical"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/left_text_second"
@@ -19,7 +20,8 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
-        android:gravity="center" />
+        android:gravity="center_vertical"
+        android:textSize="20sp"/>
 
 </LinearLayout>
 <!-- From: file:/E:/GitHub/Code_From_Today/掌上空气/app/src/main/res/layout/item_left.xml -->

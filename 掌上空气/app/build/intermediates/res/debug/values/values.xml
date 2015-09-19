@@ -112,6 +112,7 @@
     <!-- From: file:/E:/GitHub/Code_From_Today/掌上空气/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="AQI">空气质量指数</string>
+    <string name="add_city">添加城市</string>
     <string name="advice_submit">意见反馈</string>
     <string name="app_name">掌上空气</string>
     <string name="back">返回</string>

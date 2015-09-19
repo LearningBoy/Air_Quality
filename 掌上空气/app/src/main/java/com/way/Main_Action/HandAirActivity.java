@@ -19,6 +19,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -28,6 +29,7 @@ import android.widget.Toast;
 
 import com.way.HTTP.HttpUtils;
 import com.way.HTTP.URL;
+import com.way.Left_Action.CityChooseActivity;
 import com.way.Main_Slide.HomeCenterLayout;
 import com.way.Right_Action.AboutUsActivity;
 import com.way.Right_Action.CitySortActivity;
@@ -69,6 +71,18 @@ public class HandAirActivity extends Activity implements OnClickListener {
 
     //页面切换控件
     private Intent intent;
+
+    //左侧城市列表
+    private ListView list_left;
+
+    //左侧列表城市名
+    private TextView left_text_first;
+
+    //左侧列表城市空气质量
+    private TextView left_text_second;
+
+    //左侧添加城市按钮
+    private Button add_city;
 
     /************************************************************************************************************
      */
@@ -117,6 +131,11 @@ public class HandAirActivity extends Activity implements OnClickListener {
         list_right.setAdapter(adapter);
         list_right.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
+        list_left = (ListView) findViewById(R.id.list_left);
+        left_text_first = (TextView) findViewById(R.id.left_text_first);
+        left_text_second = (TextView) findViewById(R.id.left_text_second);
+        add_city = (Button) findViewById(R.id.add_city);
+
     }
 
     /************************************************************************************************************
@@ -155,6 +174,14 @@ public class HandAirActivity extends Activity implements OnClickListener {
                 }
             }
         });
+
+        add_city.setOnClickListener(this);
+        list_left.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                centerLayout.setPage(HomeCenterLayout.MIDDLE);
+
+            }
+        });
     }
 
     /************************************************************************************************************
@@ -173,6 +200,9 @@ public class HandAirActivity extends Activity implements OnClickListener {
                     centerLayout.setPage(HomeCenterLayout.RIGHT);
                 else
                     centerLayout.setPage(HomeCenterLayout.MIDDLE);
+                break;
+            case R.id.add_city:
+                intent = new Intent(HandAirActivity.this, CityChooseActivity.class);
                 break;
         }
 
@@ -276,8 +306,9 @@ public class HandAirActivity extends Activity implements OnClickListener {
                 text_PM_2_5.setText(hashMaps.get(0).get("pm2_5").toString());
                 text_AQI.setText(hashMaps.get(0).get("aqi").toString());
                 text_primary_pollution.setText(hashMaps.get(0).get("primary_pollutant").toString());
-            }else{
-                Toast.makeText(HandAirActivity.this,"暂无数据",Toast.LENGTH_LONG).show();
+
+            } else {
+                Toast.makeText(HandAirActivity.this, "暂无数据", Toast.LENGTH_LONG).show();
             }
         }
     }
